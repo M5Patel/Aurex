@@ -9,6 +9,10 @@
   html {
     scroll-behavior: smooth;
   }
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
   body {
     @apply font-sans antialiased text-luxury-black bg-white m-0;
   }

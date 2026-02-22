@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, ShoppingCart, Minus, Plus } from 'lucide-react';
 import { useCartStore } from '../store/cartStore';
+import { useWishlistStore } from '../store/wishlistStore';
 import { fetchProductBySlug } from '../utils/api';
 
 export default function ProductDetailPage() {
@@ -10,8 +11,10 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [wishlisted, setWishlisted] = useState(false);
   const addItem = useCartStore((s) => s.addItem);
+  const toggleWishlist = useWishlistStore((s) => s.toggle);
+  const wishlistItems = useWishlistStore((s) => s.items);
+  const wishlisted = product ? wishlistItems.some((i) => i.id === product.id) : false;
 
   useEffect(() => {
     fetchProductBySlug(slug).then(setProduct);
@@ -50,7 +53,7 @@ export default function ProductDetailPage() {
               <button onClick={() => addItem(product, quantity)} className="flex-1 flex items-center justify-center gap-2 py-3 bg-luxury-black text-white font-medium hover:bg-luxury-gold">
                 <ShoppingCart className="w-5 h-5" /> Add to Cart
               </button>
-              <button onClick={() => setWishlisted(!wishlisted)} className="w-12 h-12 border border-gray-200 flex items-center justify-center"><Heart className={`w-5 h-5 ${wishlisted ? 'fill-red-500 text-red-500' : ''}`} /></button>
+              <button onClick={() => toggleWishlist(product)} className="w-12 h-12 border border-gray-200 flex items-center justify-center"><Heart className={`w-5 h-5 ${wishlisted ? 'fill-red-500 text-red-500' : ''}`} /></button>
             </div>
           </div>
         </div>

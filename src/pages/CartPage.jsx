@@ -40,7 +40,9 @@ export default function CartPage() {
           <div className="bg-gray-50 p-6 h-fit">
             <h3 className="font-semibold text-lg mb-4">Order Summary</h3>
             <p className="flex justify-between font-semibold text-lg mt-6 pt-4 border-t">Total <span>₹{getTotal().toLocaleString('en-IN')}</span></p>
-            <button className="w-full mt-6 py-3 bg-luxury-black text-white font-medium hover:bg-luxury-gold">Proceed to Checkout</button>
+            <Link to="/checkout" className="block w-full mt-6 py-3 bg-luxury-black text-white font-medium hover:bg-luxury-gold text-center">
+              Proceed to Checkout
+            </Link>
           </div>
         </div>
       </div>

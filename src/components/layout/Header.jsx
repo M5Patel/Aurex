@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { Search, User, ShoppingCart, ChevronDown, Heart } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCartStore } from "../../store/cartStore";
+import { useWishlistStore } from "../../store/wishlistStore";
 import AnnouncementBar from "./AnnouncementBar";
 import MegaMenu from "./MegaMenu";
+import UnsplashSearch from "./UnsplashSearch";
 import logo from "../../assets/image.png";
 
 const navItems = [
@@ -17,9 +19,11 @@ const navItems = [
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const cartCount = useCartStore((s) => s?.getCount?.() || 0);
+  const cartCount = useCartStore((s) => s.items.reduce((acc, i) => acc + (i.quantity || 1), 0));
+  const wishlistCount = useWishlistStore((s) => s.items.length);
 
   const hasMegaMenu = (id) =>
     ["watches", "collection", "accessories"].includes(id);
@@ -100,6 +104,13 @@ export default function Header() {
 
           {/* RIGHT SIDE */}
           <div className="w-2/5 flex justify-end items-center gap-7">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="md:hidden p-2 hover:bg-gray-100 rounded-full"
+              aria-label="Search"
+            >
+              <Search className="w-6 h-6" />
+            </button>
             <div
               className="relative w-[240px] hidden md:block group 
                 transition-transform duration-300 ease-out 
@@ -113,12 +124,13 @@ export default function Header() {
                 strokeWidth={2}
               />
 
-              {/* Search Input */}
+              {/* Search Input - opens Unsplash image search */}
               <input
                 type="search"
-                placeholder="Search For Products"
+                placeholder="Search watch images..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => setSearchOpen(true)}
                 className="w-full pl-11 pr-4 py-2 rounded-full
                bg-gray-100 border border-transparent
                text-sm text-gray-900 placeholder-gray-400
@@ -127,12 +139,27 @@ export default function Header() {
                focus:bg-white focus:border-black focus:ring-1 focus:ring-black"
               />
             </div>
+            <UnsplashSearch
+              isOpen={searchOpen}
+              onClose={() => setSearchOpen(false)}
+              onSelect={() => setSearchOpen(false)}
+              initialQuery={searchQuery}
+            />
 
             <Link
               to="/wishlist"
-              className="hover:scale-110 transition duration-300 text-gray-900"
+              className="relative hover:scale-110 transition duration-300 text-gray-900"
             >
               <Heart className="w-6 h-6" />
+              {wishlistCount > 0 && (
+                <span
+                  className="absolute -top-1 -right-2 w-5 h-5
+                  bg-red-500 text-white text-[10px]
+                  rounded-full flex items-center justify-center"
+                >
+                  {wishlistCount > 9 ? "9+" : wishlistCount}
+                </span>
+              )}
             </Link>
 
             <Link
@@ -153,7 +180,7 @@ export default function Header() {
 
             <Link
               to="/account"
-              className="hover:scale-110 transition duration-300"
+              className="hover:scale-110 transition duration-300 text-gray-900"
             >
               <User className="w-6 h-6" />
             </Link>
