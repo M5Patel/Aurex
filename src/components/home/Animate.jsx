@@ -1,244 +1,191 @@
-import { useEffect, useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import radoVideo from "../../assets/rado.mp4";
 
-const TOTAL_FRAMES = 80;
+const Animate = () => {
+  const videoRef = useRef(null);
+  const containerRef = useRef(null);
+  const titleRef = useRef(null);
 
-export default function Animate() {
-  const canvasRef = useRef(null);
-  const imagesRef = useRef([]);
-  const targetFrame = useRef(0);
-  const currentFrame = useRef(0);
-  const isAnimating = useRef(false);
+  const [cursor, setCursor] = useState({ x: 0, y: 0, show: false });
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
-  // ⭐ NEW: Refs for text overlays to update them directly without React re-renders
-  const text1Ref = useRef(null);
-  const text2Ref = useRef(null);
+  const title = "Experience the Extraordinary";
 
-  // Cache the layout calculations so we don't calculate them 60 times a second
-  const layoutRef = useRef({ x: 0, y: 0, w: 0, h: 0 });
-
+  /* ---------- Fullscreen ---------- */
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d", { alpha: false });
+    const handleFullscreenChange = () =>
+      setIsFullscreen(!!document.fullscreenElement);
 
-    // Preload images
-    if (imagesRef.current.length === 0) {
-      for (let i = 0; i < TOTAL_FRAMES; i++) {
-        const img = new Image();
-        img.src = `/frame/Premium_watch_cinematic_1080p_202602220051_${String(i).padStart(3, "0")}.jpg`;
-
-        img.decode()
-          .then(() => { if (i === 0) draw(0); })
-          .catch(() => {});
-
-        imagesRef.current.push(img);
-      }
-    }
-
-    const draw = (index) => {
-      const img = imagesRef.current[index];
-      if (!img || !img.complete) return;
-
-      // Draw black background
-      ctx.fillStyle = "black";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // ⭐ APPLE SMOOTHNESS: Use pre-calculated layout data
-      const { x, y, w, h } = layoutRef.current;
-      ctx.drawImage(img, x, y, w, h);
-    };
-
-    const updateCanvasSize = () => {
-      // ⭐ APPLE SMOOTHNESS: High-DPI / Retina display support
-      const dpr = window.devicePixelRatio || 1;
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
-      // Set actual internal canvas resolution
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      // Set visual display size
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-
-      // Scale context to match DPI
-      ctx.scale(dpr, dpr);
-
-      // Pre-calculate image scaling ONCE per resize, not every frame
-      const img = imagesRef.current[0];
-      if (img) {
-        const scale = Math.min(width / img.width, height / img.height);
-        layoutRef.current = {
-          w: img.width * scale,
-          h: img.height * scale,
-          x: (width - img.width * scale) / 2,
-          y: (height - img.height * scale) / 2,
-        };
-      }
-
-      draw(Math.round(currentFrame.current));
-    };
-
-    // Wait for first image to load to do initial layout math
-    if (imagesRef.current[0]) {
-      imagesRef.current[0].onload = updateCanvasSize;
-    }
-
-    window.addEventListener("resize", updateCanvasSize);
-    updateCanvasSize();
-
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
-      const scrollFraction = Math.max(0, Math.min(scrollTop / maxScroll, 1));
-
-      targetFrame.current = scrollFraction * (TOTAL_FRAMES - 1);
-
-      if (!isAnimating.current) {
-        isAnimating.current = true;
-        animate();
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    let animationFrameId;
-    let lastDrawnFrame = -1;
-
-    // Helper function to calculate text animations based on frame range
-    const updateTextAnimation = (frame) => {
-      // Text 1: Fades in frame 10-20, stays till 35, fades out 35-45
-      if (text1Ref.current) {
-        let opacity = 0;
-        let translateY = 30; // Starts pushed down 30px
-        
-        if (frame > 10 && frame < 45) {
-          if (frame <= 20) {
-            opacity = (frame - 10) / 10;
-            translateY = 30 - (opacity * 30); // slides up to 0
-          } else if (frame <= 35) {
-            opacity = 1;
-            translateY = 0;
-          } else {
-            opacity = 1 - ((frame - 35) / 10);
-            translateY = -((1 - opacity) * 30); // slides up to -30
-          }
-        }
-        text1Ref.current.style.opacity = opacity;
-        text1Ref.current.style.transform = `translateY(${translateY}px)`;
-      }
-
-      // Text 2: Fades in frame 50-60, stays till 80
-      if (text2Ref.current) {
-        let opacity = 0;
-        let translateY = 30;
-        
-        if (frame > 50) {
-          if (frame <= 60) {
-            opacity = (frame - 50) / 10;
-            translateY = 30 - (opacity * 30);
-          } else {
-            opacity = 1;
-            translateY = 0;
-          }
-        }
-        text2Ref.current.style.opacity = opacity;
-        text2Ref.current.style.transform = `translateY(${translateY}px)`;
-      }
-    };
-
-    const animate = () => {
-      // ⭐ APPLE SMOOTHNESS: 0.08 adds a bit more "weight" to the scroll inertia
-      currentFrame.current += (targetFrame.current - currentFrame.current) * 0.08;
-
-      if (Math.abs(targetFrame.current - currentFrame.current) < 0.01) {
-        currentFrame.current = targetFrame.current;
-        isAnimating.current = false;
-      }
-
-      const frameToDraw = Math.round(currentFrame.current);
-
-      if (frameToDraw !== lastDrawnFrame) {
-        draw(frameToDraw);
-        lastDrawnFrame = frameToDraw;
-      }
-
-      // Update text overlays directly bypassing React render
-      updateTextAnimation(currentFrame.current);
-
-      if (isAnimating.current) {
-        animationFrameId = requestAnimationFrame(animate);
-      }
-    };
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", updateCanvasSize);
-      cancelAnimationFrame(animationFrameId);
-    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
 
+  /* ---------- Cursor Magnifier ---------- */
+  const handleMove = (e) => {
+    const rect = titleRef.current.getBoundingClientRect();
+    setCursor({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+      show: true,
+    });
+  };
+
+  const leaveTitle = () =>
+    setCursor((prev) => ({ ...prev, show: false }));
+
+  /* ---------- Video Controls ---------- */
+  const toggleVideo = () => {
+    if (!videoRef.current) return;
+    isPlaying ? videoRef.current.pause() : videoRef.current.play();
+    setIsPlaying(!isPlaying);
+  };
+
+  const toggleSound = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
+
+  const toggleFullscreen = () => {
+    if (!containerRef.current) return;
+    if (!document.fullscreenElement)
+      containerRef.current.requestFullscreen();
+    else document.exitFullscreen();
+  };
+
+  /* ---------- TOP BALLS CONFIG ---------- */
+  const balls = [
+    {
+      position: "top-[-12%] left-[-5%]",
+      size: "30vw",
+      duration: "4s",
+      animation: "floatSlowRight",
+    },
+    {
+      position: "top-[-12%] right-[-5%]",
+      size: "30vw",
+      duration: "4s",
+      animation: "floatSlowLeft",
+    },
+  ];
+
   return (
-    <div style={{ height: "400vh", backgroundColor: "black" }}>
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          width: "100%",
-          height: "100vh",
-          overflow: "hidden", // Keep text contained
-        }}
-      >
-        <canvas
-          ref={canvasRef}
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-12 overflow-hidden ">
+      
+      {/* ---------- PREMIUM BALL CSS ---------- */}
+      <style>{`
+        @keyframes floatSlowRight {
+          0%,100% { transform: translate(0,0); }
+          50% { transform: translate(120px,25px); }
+        }
+
+        @keyframes floatSlowLeft {
+          0%,100% { transform: translate(0,0); }
+          50% { transform: translate(-120px,25px); }
+        }
+
+        .ball {
+          position:absolute;
+          filter:blur(30px);
+          opacity:.9;
+          background: radial-gradient(circle at 30% 30%,
+            rgba(255, 208, 151, 1),
+            rgba(255,255,255,0.7),
+            rgba(0,255,120,0.6)
+          );
+          animation-timing-function:cubic-bezier(.45,.05,.55,.95);
+          animation-iteration-count: infinite;
+        }
+
+        .magnifier{
+          position:absolute;
+          width:120px;
+          height:120px;
+          border-radius:50%;
+          pointer-events:none;
+          border:2px solid rgba(255,255,255,0.6);
+          backdrop-filter: blur(6px);
+          transform: translate(-50%, -50%);
+        }
+
+        .zoom-text span{
+          transition:transform .2s ease;
+        }
+      `}</style>
+
+      {/* ---------- TOP FLOATING BALLS ---------- */}
+      {balls.map((ball, i) => (
+        <div
+          key={i}
+          className={`ball ${ball.position}`}
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            willChange: "transform",
-            transform: "translateZ(0)",
+            width: ball.size,
+            height: ball.size,
+            animationDuration: ball.duration,
+            animationName: ball.animation,
           }}
         />
+      ))}
 
-        {/* ⭐ NEW: Cinematic Text Overlays */}
-        <div
-          ref={text1Ref}
-          style={{
-            position: "absolute",
-            top: "40%",
-            left: "10%",
-            color: "white",
-            fontFamily: "system-ui, -apple-system, sans-serif",
-            opacity: 0, // Controlled by JS
-            willChange: "opacity, transform",
-          }}
-        >
-          <h1 style={{ fontSize: "4rem", margin: 0, fontWeight: 600 }}>Precision.</h1>
-          <p style={{ fontSize: "1.5rem", color: "#a1a1aa", margin: "10px 0 0 0" }}>
-            Every detail meticulously crafted.
-          </p>
-        </div>
+      {/* ---------- TITLE ---------- */}
+      <div
+        ref={titleRef}
+        onMouseMove={handleMove}
+        onMouseLeave={leaveTitle}
+        className="relative z-10 mb-10"
+      >
+        {cursor.show && (
+          <div
+            className="magnifier"
+            style={{ left: cursor.x, top: cursor.y }}
+          />
+        )}
 
-        <div
-          ref={text2Ref}
-          style={{
-            position: "absolute",
-            top: "50%",
-            right: "10%",
-            color: "white",
-            textAlign: "right",
-            fontFamily: "system-ui, -apple-system, sans-serif",
-            opacity: 0, // Controlled by JS
-            willChange: "opacity, transform",
-          }}
-        >
-          <h1 style={{ fontSize: "4rem", margin: 0, fontWeight: 600 }}>Timeless.</h1>
-          <p style={{ fontSize: "1.5rem", color: "#a1a1aa", margin: "10px 0 0 0" }}>
-            A design that lasts forever.
-          </p>
+        <h2 className="zoom-text text-xl md:text-4xl font-semibold tracking-widest uppercase text-black text-center flex flex-wrap justify-center">
+          {title.split("").map((letter, i) => (
+            <span
+              key={i}
+              style={{
+                marginRight: "6px",
+                transform: cursor.show
+                  ? `scale(${Math.abs(cursor.x - i * 20) < 60 ? 1.6 : 1})`
+                  : "scale(1)",
+              }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </span>
+          ))}
+        </h2>
+      </div>
+
+      {/* ---------- VIDEO ---------- */}
+      <div
+        ref={containerRef}
+        className="relative w-full max-w-[85%] aspect-video bg-black overflow-hidden shadow-2xl rounded-xl z-10"
+      >
+        <video
+          ref={videoRef}
+          src={radoVideo}
+          autoPlay
+          muted={isMuted}
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+
+        <div className="absolute bottom-6 right-6 flex gap-4 text-white">
+          <button onClick={toggleSound}>{isMuted ? "🔇" : "🔊"}</button>
+          <button onClick={toggleVideo}>{isPlaying ? "⏸" : "▶"}</button>
+          <button onClick={toggleFullscreen}>
+            {isFullscreen ? "🡼" : "⛶"}
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default Animate;

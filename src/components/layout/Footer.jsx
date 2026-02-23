@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Youtube, Twitter, Linkedin } from 'lucide-react';
-
+import logo from '../../assets/image.png';
 const footerColumns = [
   { title: 'DISCOVER AUREX', links: ['About Us', 'Sustainability', 'Careers', 'Blog'] },
   { title: 'USEFUL LINKS', links: ['Track Order', 'Warranty', 'Contact', 'FAQs'] },
@@ -23,12 +23,8 @@ export default function Footer() {
             </div>
           ))}
           <div>
-            <Link to="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-luxury-black flex items-center justify-center text-white font-serif text-lg">A</div>
-              <div>
-                <span className="font-serif font-semibold text-xl block">AUREX</span>
-                <span className="text-xs text-gray-500 tracking-widest">RACE WITH TIME</span>
-              </div>
+            <Link to="/" className="flex items-center gap-3 mb-5">
+             <img src={logo} alt="Aurex Logo" className="h-14 w-auto" />
             </Link>
             <div className="flex gap-4">
               {socialIcons.map(({ icon: Icon }) => <a key={Icon.name} href="#" className="text-gray-600 hover:text-luxury-gold"><Icon className="w-5 h-5" /></a>)}

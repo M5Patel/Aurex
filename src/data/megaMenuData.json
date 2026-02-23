@@ -1,0 +1,131 @@
+{
+  "watches": {
+    "type": "lists",
+    "columns": [
+      {
+        "title": "SHOP BY GENDER",
+        "items": [
+          { "name": "Men", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Women", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "View All" }
+        ]
+      },
+      {
+        "title": "SHOP BY PRICE",
+        "items": [
+          { "name": "Under Rs 1500", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Under Rs 2000", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Under Rs 3000", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Under Rs 5000", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" }
+        ]
+      },
+      {
+        "title": "SHOP BY STRAP",
+        "items": [
+          { "name": "Leather Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Steel Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Silicone Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Nylon Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "View All" }
+        ]
+      },
+      {
+        "title": "SHOP BY TYPE",
+        "items": [
+          { "name": "Automatic Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Digital Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Analog Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Analog Digital Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Chronograph Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Sports Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" }
+        ]
+      },
+      {
+        "title": "SHOP BY STYLE",
+        "items": [
+          { "name": "Daily Wear", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Office Wear", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Sports Wear", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Minimalist", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "View All" }
+        ]
+      }
+    ]
+  },
+  "collection": {
+    "type": "lists",
+    "columns": [
+      {
+        "title": "PROTOTYPE",
+        "items": [
+          { "name": "Stardom", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" }
+        ]
+      },
+      {
+        "title": "NEW ARRIVALS",
+        "items": [
+          { "name": "Blade Dual Time", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Timeora", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Ellore", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Riva", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Serene", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Dazzle", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "View All" }
+        ]
+      },
+      {
+        "title": "LATEST COLLECTION",
+        "items": [
+          { "name": "Bolt", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Ocean", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Gazedoom", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Velvetine", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Bella", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Urbane Moon", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Elegare", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" }
+        ]
+      },
+      {
+        "title": "CLASSIC COLLECTION",
+        "items": [
+          { "name": "Iconic Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Timegrapher Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Majestic", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Hawk", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Opus", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Professional Edge", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Rig One 'O One WT Max", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "View All" }
+        ]
+      },
+      {
+        "title": "LUXURY COLLECTION",
+        "items": [
+          { "name": "Starboard", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Imperial Watch", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Urbanic", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Urbane", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Blade", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Specter", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "View All" }
+        ]
+      }
+    ]
+  },
+  "accessories": {
+    "type": "promos",
+    "promos": [
+      {
+        "img": "https://placehold.co/600x400/1a1a1a/ffffff?text=Premium+Leather+Box",
+        "link": "/accessories/box",
+        "alt": "Premium Leather Box"
+      },
+      {
+        "img": "https://placehold.co/600x400/e5e5e5/1a1a1a?text=Watch+Straps",
+        "link": "/accessories/straps",
+        "alt": "Watch Straps"
+      }
+    ]
+  }
+}
+
