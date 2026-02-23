@@ -1,11 +1,27 @@
+/** Normalize product for consistent fields (discountPrice, stock, rating, etc.) */
+function normalizeProduct(p) {
+  if (!p) return null;
+  return {
+    ...p,
+    discountPrice: p.discountPrice ?? p.price,
+    stock: p.stock ?? 10,
+    rating: p.rating ?? 4.5,
+    reviews: p.reviews ?? 0,
+    strapType: p.strapType ?? p.strap,
+    tags: p.tags ?? [p.category, p.gender, p.strap, p.type, p.style].filter(Boolean),
+  };
+}
+
 export const fetchProducts = async () => {
   const res = await import('../data/products.json');
-  return res.default || res;
+  const list = res.default || res;
+  return Array.isArray(list) ? list.map(normalizeProduct) : list;
 };
 
 export const fetchProductBySlug = async (slug) => {
   const products = await fetchProducts();
-  return Array.isArray(products) ? products.find((p) => p.slug === slug) || null : null;
+  const p = Array.isArray(products) ? products.find((x) => x.slug === slug) : null;
+  return p ? normalizeProduct(p) : null;
 };
 
 export const fetchAccessories = async () => {

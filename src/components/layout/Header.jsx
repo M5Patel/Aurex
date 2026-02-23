@@ -7,8 +7,8 @@ import { useCartStore } from "../../store/cartStore";
 import { useWishlistStore } from "../../store/wishlistStore";
 import AnnouncementBar from "./AnnouncementBar";
 // 2. IMPORT megaMenuItems
-import MegaMenu, { megaMenuItems } from "./MegaMenu"; 
-import UnsplashSearch from "./UnsplashSearch";
+import MegaMenu, { megaMenuItems } from "./MegaMenu";
+import ProductSearch from "./ProductSearch";
 import logo from "../../assets/image.png";
 
 const navItems = [
@@ -23,7 +23,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+
   // 3. ADD Mobile Menu State
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpandedItem, setMobileExpandedItem] = useState(null);
@@ -54,12 +54,11 @@ export default function Header() {
     <header
       onMouseLeave={() => setActiveMenu(null)}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b
-        ${
-          activeMenu || mobileMenuOpen
-            ? "bg-white backdrop-blur-none border-gray-100 shadow-md"
-            : scrolled
-              ? "bg-white/60 backdrop-blur-xl border-white/20 shadow-md"
-              : "bg-white border-transparent shadow-sm"
+        ${activeMenu || mobileMenuOpen
+          ? "bg-white backdrop-blur-none border-gray-100 shadow-md"
+          : scrolled
+            ? "bg-white/60 backdrop-blur-xl border-white/20 shadow-md"
+            : "bg-white border-transparent shadow-sm"
         }`}
     >
       <div
@@ -128,20 +127,20 @@ export default function Header() {
             >
               <Search className="w-5 h-5 md:w-6 md:h-6" />
             </button>
-            
+
             <div className="relative w-[240px] hidden md:block group transition-transform duration-300 ease-out hover:scale-[0.98] focus-within:scale-100">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-gray-500 transition-colors duration-300 pointer-events-none z-10 group-hover:text-gray-900 group-focus-within:text-black" strokeWidth={2} />
               <input
                 type="search"
-                placeholder="Search watch images..."
+                placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setSearchOpen(true)}
                 className="w-full pl-11 pr-4 py-2 rounded-full bg-gray-100 border border-transparent text-sm text-gray-900 placeholder-gray-400 transition-all duration-300 outline-none hover:bg-gray-50 hover:border-gray-400 hover:shadow-sm focus:bg-white focus:border-black focus:ring-1 focus:ring-black"
               />
             </div>
-            
-            <UnsplashSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} onSelect={() => setSearchOpen(false)} initialQuery={searchQuery} />
+
+            <ProductSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} initialQuery={searchQuery} />
 
             <Link to="/wishlist" className="relative hover:scale-110 transition duration-300 text-gray-900 hidden sm:block">
               <Heart className="w-5 h-5 md:w-6 md:h-6" />
@@ -216,7 +215,7 @@ export default function Header() {
               <div className="flex-1 py-4">
                 {navItems.map((item) => (
                   <div key={item.id} className="border-b border-gray-50 last:border-0">
-                    <div 
+                    <div
                       className="flex items-center justify-between px-6 py-4"
                       onClick={() => {
                         if (hasMegaMenu(item.id)) {
@@ -226,16 +225,16 @@ export default function Header() {
                         }
                       }}
                     >
-                      <Link 
-                        to={item.href} 
+                      <Link
+                        to={item.href}
                         className="text-[14px] font-bold uppercase tracking-wider text-gray-900 flex-1"
                         onClick={(e) => hasMegaMenu(item.id) && e.preventDefault()}
                       >
                         {item.label}
                       </Link>
                       {hasMegaMenu(item.id) && (
-                        <ChevronDown 
-                          className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${mobileExpandedItem === item.id ? "rotate-180" : ""}`} 
+                        <ChevronDown
+                          className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${mobileExpandedItem === item.id ? "rotate-180" : ""}`}
                         />
                       )}
                     </div>
@@ -256,7 +255,7 @@ export default function Header() {
                                 <ul className="space-y-3">
                                   {col.items.map((subItem, sIdx) => (
                                     <li key={sIdx}>
-                                      <Link 
+                                      <Link
                                         to={`/collections/${subItem.name.toLowerCase().replace(/\s+/g, "-")}`}
                                         className="text-[14px] text-gray-700 hover:text-black"
                                         onClick={() => setMobileMenuOpen(false)}

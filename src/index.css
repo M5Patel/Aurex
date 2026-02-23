@@ -9,12 +9,20 @@
   html {
     scroll-behavior: smooth;
   }
-  /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
   body {
     @apply font-sans antialiased text-luxury-black bg-white m-0;
+  }
+}
+
+@layer components {
+  .btn-luxury {
+    @apply rounded-md bg-luxury-black px-6 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-luxury-gold hover:shadow-[0_8px_24px_rgba(201,169,98,0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-luxury-gold/80 focus-visible:ring-offset-2;
+  }
+  .btn-luxury-outline {
+    @apply rounded-md border border-gray-300 bg-transparent px-6 py-3 font-medium text-luxury-black transition-all duration-300 hover:border-luxury-gold/60 hover:bg-gray-50 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-luxury-gold/60 focus-visible:ring-offset-2;
   }
 }
 

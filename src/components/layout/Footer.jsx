@@ -2,9 +2,25 @@ import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Youtube, Twitter, Linkedin } from 'lucide-react';
 import logo from '../../assets/image.png';
 const footerColumns = [
-  { title: 'DISCOVER AUREX', links: ['About Us', 'Sustainability', 'Careers', 'Blog'] },
-  { title: 'USEFUL LINKS', links: ['Track Order', 'Warranty', 'Contact', 'FAQs'] },
-  { title: 'POLICIES', links: ['Privacy', 'Terms', 'Shipping', 'Returns'] },
+  { title: 'DISCOVER AUREX', links: [
+    { label: 'About Us', to: '/collections' },
+    { label: 'Sustainability', to: '#' },
+    { label: 'Careers', to: '#' },
+    { label: 'Blog', to: '#' },
+  ]},
+  { title: 'USEFUL LINKS', links: [
+    { label: 'Track Order', to: '/account' },
+    { label: 'Admin', to: '/admin' },
+    { label: 'Warranty', to: '#' },
+    { label: 'Contact', to: '#' },
+    { label: 'FAQs', to: '#' },
+  ]},
+  { title: 'POLICIES', links: [
+    { label: 'Privacy', to: '#' },
+    { label: 'Terms', to: '#' },
+    { label: 'Shipping', to: '#' },
+    { label: 'Returns', to: '#' },
+  ]},
 ];
 
 const socialIcons = [{ icon: Instagram }, { icon: Facebook }, { icon: Youtube }, { icon: Twitter }, { icon: Linkedin }];
@@ -18,7 +34,13 @@ export default function Footer() {
             <div key={col.title}>
               <h4 className="text-xs font-semibold tracking-widest mb-6">{col.title}</h4>
               <ul className="space-y-3">
-                {col.links.map((link) => <li key={link}><Link to="#" className="text-sm text-gray-600 hover:text-luxury-gold">{link}</Link></li>)}
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link to={link.to} className="text-sm text-gray-600 transition hover:text-luxury-gold">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           ))}

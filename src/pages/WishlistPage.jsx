@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { Heart, Trash2 } from 'lucide-react';
 import { useWishlistStore } from '../store/wishlistStore';
 import ProductCard from '../components/product/ProductCard';
+import { useToast } from '../components/layout/ToastProvider';
 
 export default function WishlistPage() {
   const items = useWishlistStore((s) => s.items);
   const remove = useWishlistStore((s) => s.remove);
+  const toast = useToast();
 
   if (items.length === 0) {
     return (
@@ -35,7 +37,13 @@ export default function WishlistPage() {
             >
               <ProductCard product={product} />
               <button
-                onClick={() => remove(product.id)}
+                onClick={() => {
+                  remove(product.id);
+                  toast.info({
+                    title: 'Removed from wishlist',
+                    description: product.name,
+                  });
+                }}
                 aria-label="Remove from wishlist"
                 className="absolute top-3 right-3 z-10 p-2 bg-white/90 rounded-full shadow-md md:opacity-0 md:group-hover:opacity-100 hover:bg-red-50 text-gray-600 hover:text-red-500 transition-all"
               >

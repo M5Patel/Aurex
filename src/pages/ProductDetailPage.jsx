@@ -5,22 +5,40 @@ import { Heart, ShoppingCart, Minus, Plus } from 'lucide-react';
 import { useCartStore } from '../store/cartStore';
 import { useWishlistStore } from '../store/wishlistStore';
 import { fetchProductBySlug } from '../utils/api';
+import { useToast } from '../components/layout/ToastProvider';
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState(undefined);
+  const [loaded, setLoaded] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const addItem = useCartStore((s) => s.addItem);
+  const removeFromWishlist = useWishlistStore((s) => s.remove);
   const toggleWishlist = useWishlistStore((s) => s.toggle);
   const wishlistItems = useWishlistStore((s) => s.items);
   const wishlisted = product ? wishlistItems.some((i) => i.id === product.id) : false;
+  const toast = useToast();
 
   useEffect(() => {
-    fetchProductBySlug(slug).then(setProduct);
+    setLoaded(false);
+    fetchProductBySlug(slug).then((p) => {
+      setProduct(p ?? null);
+      setLoaded(true);
+    });
   }, [slug]);
 
-  if (!product) return <div className="min-h-screen flex items-center justify-center"><p>Loading...</p></div>;
+  if (!loaded) {
+    return <div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-luxury-gold border-t-transparent rounded-full animate-spin" /></div>;
+  }
+  if (!product) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center px-6">
+        <p className="text-gray-500 mb-4">Product not found</p>
+        <Link to="/collections" className="text-luxury-gold hover:underline">Back to Collections</Link>
+      </div>
+    );
+  }
 
   const images = product.images || [product.image].filter(Boolean);
 
@@ -50,10 +68,31 @@ export default function ProductDetailPage() {
                 <span className="w-12 h-12 flex items-center justify-center border-x border-gray-200">{quantity}</span>
                 <button onClick={() => setQuantity(quantity + 1)} className="w-12 h-12 flex items-center justify-center"><Plus className="w-4 h-4" /></button>
               </div>
-              <button onClick={() => addItem(product, quantity)} className="flex-1 flex items-center justify-center gap-2 py-3 bg-luxury-black text-white font-medium hover:bg-luxury-gold">
-                <ShoppingCart className="w-5 h-5" /> Add to Cart
+              <button
+                onClick={() => {
+                  addItem(product, quantity);
+                  if (wishlisted) removeFromWishlist(product.id);
+                  toast.success({
+                    title: 'Added to cart',
+                    description: `${product.name} (×${quantity})`,
+                  });
+                }}
+                className="flex flex-1 items-center justify-center gap-2 bg-luxury-black py-3 font-medium text-white transition hover:bg-luxury-gold"
+              >
+                <ShoppingCart className="h-5 w-5" /> Add to Cart
               </button>
-              <button onClick={() => toggleWishlist(product)} className="w-12 h-12 border border-gray-200 flex items-center justify-center"><Heart className={`w-5 h-5 ${wishlisted ? 'fill-red-500 text-red-500' : ''}`} /></button>
+              <button
+                onClick={() => {
+                  toggleWishlist(product);
+                  toast[wishlisted ? 'info' : 'success']({
+                    title: wishlisted ? 'Removed from wishlist' : 'Added to wishlist',
+                    description: product.name,
+                  });
+                }}
+                className="flex h-12 w-12 items-center justify-center border border-gray-200 transition hover:border-luxury-gold/60"
+              >
+                <Heart className={`h-5 w-5 ${wishlisted ? 'fill-red-500 text-red-500' : ''}`} />
+              </button>
             </div>
           </div>
         </div>

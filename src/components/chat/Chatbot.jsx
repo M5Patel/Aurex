@@ -60,10 +60,9 @@ export default function Chatbot() {
       <motion.button
         aria-label="Open chat"
         onClick={() => setOpen(true)}
-        className="fixed bottom-8 left-8 z-40 w-14 h-14 rounded-full bg-luxury-black text-white shadow-luxury-lg
-          hover:bg-luxury-gold transition-colors flex items-center justify-center"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        className="fixed bottom-6 left-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-zinc-900 via-black to-neutral-900 text-white shadow-[0_18px_40px_rgba(0,0,0,0.75)] ring-1 ring-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_50px_rgba(0,0,0,0.85)] hover:ring-luxury-gold/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-luxury-gold/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black sm:bottom-6 sm:left-6 sm:h-14 sm:w-14"
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
       >
         <MessageCircle className="w-6 h-6" />
       </motion.button>
@@ -73,7 +72,7 @@ export default function Chatbot() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed bottom-24 left-8 z-50 w-[340px] sm:w-[380px] h-[420px] bg-white rounded-lg shadow-luxury-lg border border-gray-100 flex flex-col overflow-hidden"
+            className="fixed bottom-20 left-4 z-50 flex h-[420px] w-[340px] flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-[0_24px_60px_rgba(0,0,0,0.2)] sm:bottom-24 sm:left-6 sm:w-[380px]"
           >
             <div className="flex items-center justify-between px-4 py-3 bg-luxury-black text-white">
               <span className="font-semibold">AUREX Assist</span>
