@@ -8,7 +8,7 @@ import Newsletter from '../components/home/Newsletter';
 import { fetchProducts } from '../utils/api';
 import Animate from '../components/home/Animate';
 import Indianew from '../components/home/Indianew';
-import Sellbrandon from '../components/home/sellbrandon';
+import Sellbrandon from '../components/home/Sellbrandon';
 import ExploreAccessories from '../components/home/ExploreAccessories';
 import Shopby from '../components/home/Shopby';
 import Touchslide from '../components/home/Touchslide';
@@ -25,16 +25,16 @@ export default function HomePage() {
       <HeroSlider />
       <WatchShowcaseBanner />
       <ShopByCollection />
-      <Shopby/>
+      <Shopby />
       <BestWatchCollections products={products} />
       <Animate />
-       <ExploreAccessories /> 
-       <Sellbrandon />
-       <Indianew />
+      <ExploreAccessories />
+      <Sellbrandon />
+      <Indianew />
       <TrustSection />
-      <Touchslide/>
+      <Touchslide />
       <LuxuryWatchSlider />
-       <Newsletter />
+      <Newsletter />
     </main>
   );
 }
