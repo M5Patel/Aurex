@@ -1,63 +1,56 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 
 const slides = [
-  { 
-    id: 1, 
-    tagline: 'COMPLETE THE LOOK', 
-    headline: 'EXPLORE WATCH ACCESSORIES', 
+  {
+    id: 1,
+    tagline: 'COMPLETE THE LOOK',
+    headline: 'EXPLORE WATCH ACCESSORIES',
     subtext: 'Leather Strap | Nylon Strap | Steel Strap | Watch Box',
-    image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1920&q=80', 
-    cta: 'SHOP NOW' 
+    image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1920&q=80',
   },
-  { 
-    id: 2, 
-    tagline: 'THE AUREX SIGNATURE', 
-    headline: 'BLADE DUAL TIME', 
+  {
+    id: 2,
+    tagline: 'THE AUREX SIGNATURE',
+    headline: 'BLADE DUAL TIME',
     subtext: 'Analog Soul. Digital Precision. Master every second.',
-    image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=1920&q=80', 
-    cta: 'DISCOVER BLADE' 
+    image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=1920&q=80',
   },
-  { 
-    id: 3, 
-    tagline: 'ENGINEERED FOR EXCELLENCE', 
-    headline: 'THE RACING COLLECTION', 
+  {
+    id: 3,
+    tagline: 'ENGINEERED FOR EXCELLENCE',
+    headline: 'THE RACING COLLECTION',
     subtext: 'Aerodynamic design meets horological perfection.',
-    image: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=1920&q=80', 
-    cta: 'VIEW COLLECTION' 
+    image: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=1920&q=80',
   },
-   { 
-    id: 4, 
-    tagline: 'ENGINEERED FOR EXCELLENCE', 
-    headline: 'THE RACING COLLECTION', 
+  {
+    id: 4,
+    tagline: 'ENGINEERED FOR EXCELLENCE',
+    headline: 'THE RACING COLLECTION',
     subtext: 'Aerodynamic design meets horological perfection.',
-    image: 'https://media.istockphoto.com/id/458066987/photo/rolex-deepsea-wristwatch.jpg?s=612x612&w=0&k=20&c=T3frhDuFQw9YvmuPd0GeK_Ka5NlEFlCmqtWrJtI7beA=', 
-    cta: 'VIEW COLLECTION' 
+    image: 'https://media.istockphoto.com/id/458066987/photo/rolex-deepsea-wristwatch.jpg?s=612x612&w=0&k=20&c=T3frhDuFQw9YvmuPd0GeK_Ka5NlEFlCmqtWrJtI7beA=',
   },
-   { 
-    id: 5, 
-    tagline: 'ENGINEERED FOR EXCELLENCE', 
-    headline: 'THE RACING COLLECTION', 
+  {
+    id: 5,
+    tagline: 'ENGINEERED FOR EXCELLENCE',
+    headline: 'THE RACING COLLECTION',
     subtext: 'Aerodynamic design meets horological perfection.',
-    image: 'https://t3.ftcdn.net/jpg/01/70/71/34/360_F_170713428_KgRrmdjyiRauJGAXJwVSqKlDXEO2YU8i.jpg', 
-    cta: 'VIEW COLLECTION' 
+    image: 'https://t3.ftcdn.net/jpg/01/70/71/34/360_F_170713428_KgRrmdjyiRauJGAXJwVSqKlDXEO2YU8i.jpg',
   },
 ];
 
-// Grok-style / Snowfall Particle System
-const SnowParticles = () => {
+// Reduced particle count (20 instead of 50) for better performance
+const SnowParticles = memo(function SnowParticles() {
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
-    // Generate 50 particles for a rich snowfall effect
-    const newParticles = Array.from({ length: 50 }).map((_, i) => ({
+    const newParticles = Array.from({ length: 20 }).map((_, i) => ({
       id: i,
-      size: Math.random() * 4.5 + 1, // 1px to 3.5px
-      xStart: Math.random() * 100, // 0 to 100vw
-      duration: Math.random() * 15 + 10, // 10s to 25s falling speed
-      delay: Math.random() * -20, // Negative delay so screen is already full on load
-      opacity: Math.random() * 0.5 + 0.3, // 0.3 to 0.8 opacity
+      size: Math.random() * 4.5 + 1,
+      xStart: Math.random() * 100,
+      duration: Math.random() * 15 + 10,
+      delay: Math.random() * -20,
+      opacity: Math.random() * 0.5 + 0.3,
     }));
     setParticles(newParticles);
   }, []);
@@ -68,11 +61,12 @@ const SnowParticles = () => {
         <motion.div
           key={p.id}
           className="absolute bg-white rounded-full"
-          style={{ 
-            width: p.size, 
-            height: p.size, 
+          style={{
+            width: p.size,
+            height: p.size,
             left: `${p.xStart}vw`,
-            boxShadow: '0 0 6px rgba(255,255,255,0.8)'
+            boxShadow: '0 0 6px rgba(255,255,255,0.8)',
+            willChange: 'transform',
           }}
           initial={{ y: "-10vh", opacity: 0 }}
           animate={{ y: "110vh", opacity: [0, p.opacity, p.opacity, 0] }}
@@ -86,12 +80,11 @@ const SnowParticles = () => {
       ))}
     </div>
   );
-};
+});
 
 export default function FullScreenCosmicSlider() {
   const [current, setCurrent] = useState(0);
 
-  // Auto-scroll logic (Changes slide every 6 seconds)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -101,13 +94,13 @@ export default function FullScreenCosmicSlider() {
 
   return (
     <section className="relative w-full h-[calc(100vh-80px)] min-h-[750px] bg-[#0a0a0a] overflow-hidden font-sans">
-      {/* 1. The Snowfall Effect */}
+      {/* Snowfall Effect */}
       <SnowParticles />
 
-      {/* 2. The Full-Screen Image Slider */}
+      {/* Full-Screen Image Slider */}
       <AnimatePresence mode="sync">
         {slides.map((slide, index) => index === current && (
-          <motion.div 
+          <motion.div
             key={slide.id}
             className="absolute inset-0 z-10"
             initial={{ opacity: 0 }}
@@ -115,23 +108,25 @@ export default function FullScreenCosmicSlider() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
           >
-            {/* Background Image with slow zoom (Ken Burns) */}
-            <motion.img 
-              src={slide.image} 
-              alt={slide.headline} 
+            {/* First slide loads eagerly, rest are lazy */}
+            <motion.img
+              src={slide.image}
+              alt={slide.headline}
               className="absolute inset-0 w-full h-full object-cover"
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
               initial={{ scale: 1.05 }}
               animate={{ scale: 1 }}
               transition={{ duration: 3, ease: "easeOut" }}
             />
-            
-            {/* Dark Gradient Overlay: Darker on the left for text readability, clear on the right */}
+
+            {/* Dark Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent/20" />
 
-            {/* Content Container (Left-Aligned like your screenshot) */}
+            {/* Content Container */}
             <div className="absolute inset-0 flex flex-col justify-center max-w-7xl mx-auto px-6 lg:px-12 z-30">
               <div className="max-w-2xl">
-                <motion.p 
+                <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
@@ -139,8 +134,8 @@ export default function FullScreenCosmicSlider() {
                 >
                   {slide.tagline}
                 </motion.p>
-                
-                <motion.h1 
+
+                <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
@@ -148,8 +143,8 @@ export default function FullScreenCosmicSlider() {
                 >
                   {slide.headline}
                 </motion.h1>
-                
-                <motion.p 
+
+                <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
@@ -157,33 +152,22 @@ export default function FullScreenCosmicSlider() {
                 >
                   {slide.subtext}
                 </motion.p>
-
-                <motion.button 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.9 }}
-                  className="group flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-medium tracking-wide hover:bg-luxury-gold hover:text-white transition-all duration-300"
-                >
-                  {slide.cta}
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </motion.button>
               </div>
             </div>
           </motion.div>
         ))}
       </AnimatePresence>
 
-      {/* 3. Progress Bar Indicators at the bottom */}
+      {/* Progress Bar Indicators */}
       <div className="absolute bottom-8 left-6 lg:left-12 z-30 flex gap-3">
         {slides.map((_, i) => (
-          <button 
+          <button
             key={i}
             onClick={() => setCurrent(i)}
             className="group py-2 flex items-center"
           >
-            <div className={`h-[3px] rounded-full transition-all duration-500 ease-in-out ${
-              i === current ? 'w-16 bg-white' : 'w-8 bg-white/30 group-hover:bg-white/60'
-            }`} />
+            <div className={`h-[3px] rounded-full transition-all duration-500 ease-in-out ${i === current ? 'w-16 bg-white' : 'w-8 bg-white/30 group-hover:bg-white/60'
+              }`} />
           </button>
         ))}
       </div>

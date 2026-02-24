@@ -3,14 +3,49 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const initialCollections = [
-  { id: 1, name: 'Urbane Moon Watches', image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600', href: '/collections' },
-  { id: 2, name: 'Timeora Watches', image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600', href: '/collections' },
-  { id: 3, name: 'Riva Watches', image: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600', href: '/collections' },
-  { id: 4, name: 'Serene Watches', image: 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=600', href: '/collections' },
-  { id: 5, name: 'Dezzle Watches', image: 'https://images.unsplash.com/photo-1508656919611-e129f109ff6d?w=600', href: '/collections' },
-  { id: 6, name: 'Stardom Watches', image: 'https://images.unsplash.com/photo-1548171915-e7631cc1144f?w=600', href: '/collections' },
+  {
+    id: 1,
+    name: "Urbane Moon Watches",
+    image:
+      "https://sylvi.in/cdn/shop/files/Sylvi_Watch_Collection_Image_Homepage_800_x_800_29295e68-41b3-4239-9c0f-e398e0892146.webp?v=1770894343",
+    href: "/collections",
+  },
+  {
+    id: 2,
+    name: "Timeora Watches",
+    image:
+      "https://sylvi.in/cdn/shop/files/Sylvi_Imperial_black_Watch_Collection_Homepage_Main_Image.webp?v=1720243572",
+    href: "/collections",
+  },
+  {
+    id: 3,
+    name: "Riva Watches",
+    image:
+      "https://sylvi.in/cdn/shop/files/SY-2408-BK-RG-RG-SL-ST_Velvetine_Steel_800_x_800.webp?v=1755060427",
+    href: "/collections",
+  },
+  {
+    id: 4,
+    name: "Serene Watches",
+    image:
+      "https://sylvi.in/cdn/shop/files/Sylv_Elegare_Black_silver_Watch_Collection_Image_Homepage.webp?v=1736160692",
+    href: "/collections",
+  },
+  {
+    id: 5,
+    name: "Dezzle Watches",
+    image:
+      "https://sylvi.in/cdn/shop/files/Sylvi_Urbanic_Green_Watch_Collection_Image_Homepage.webp?v=1729511480",
+    href: "/collections",
+  },
+  {
+    id: 6,
+    name: "Timeora Watches",
+    image:
+      "https://sylvi.in/cdn/shop/files/Sylvi_Timeora_Watch_Collection_Image_Homepage_d9be0a41-0f1b-417b-809f-4981f3a86d41.webp?v=1756535110",
+    href: "/collections",
+  },
 ];
-
 export default function ShopByCollection() {
   const [items, setItems] = useState(initialCollections);
   const [isSliding, setIsSliding] = useState(false);

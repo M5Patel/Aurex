@@ -6,19 +6,17 @@ import logo from "../../assets/image.png";
 
 const Indianew = () => {
   return (
-    <section className="relative w-full min-h-screen  overflow-hidden flex flex-col md:flex-row items-center px-6 md:px-20 py-16">
+    <section className="relative w-full min-h-screen overflow-hidden flex flex-col md:flex-row items-center px-6 md:px-20 py-16">
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="w-full md:w-1/2 space-y-12 z-20"
+        className="w-full md:w-1/2 space-y-8 md:space-y-12 z-20 mt-10 md:mt-0"
       >
         {/* Animated Heading */}
         <h2 className="relative font-extrabold text-4xl md:text-6xl leading-[1.1] tracking-tight">
           <span className="animated-gradient-text">BHARAT KA</span>
-
           <br />
-
           <span className="animated-gradient-text">NAYA TIME</span>
         </h2>
 
@@ -31,11 +29,11 @@ const Indianew = () => {
                     animate-pulse"
           />
 
-          <h3 className="text-xl font-semibold uppercase tracking-[0.25em] text-black">
+          <h3 className="text-lg md:text-xl font-semibold uppercase tracking-[0.25em] text-black">
             THE WHEEL OF TIME
           </h3>
 
-          <p className="text-gray-600 text-base leading-relaxed">
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
             Elevate your style with our wristwatches — where every tick reflects
             personality, precision, and timeless luxury.
           </p>
@@ -45,32 +43,32 @@ const Indianew = () => {
         <motion.button
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
-          className="relative px-12 py-4 text-sm font-semibold uppercase
-               tracking-[0.3em] text-white overflow-hidden rounded-md
-               bg-black shadow-xl group"
+          className="relative px-8 md:px-12 py-3 md:py-4 text-xs md:text-sm font-semibold uppercase
+                     tracking-[0.3em] text-white overflow-hidden rounded-md
+                     bg-black shadow-xl group"
         >
           <span className="relative z-10">Explore All Collections</span>
 
           {/* Animated Gradient Overlay */}
           <span
             className="absolute inset-0 bg-gradient-to-r 
-                     from-orange-500 via-white to-green-600
-                     translate-x-[-100%] group-hover:translate-x-0
-                     transition-transform duration-700 opacity-20"
+                       from-orange-500 via-white to-green-600
+                       translate-x-[-100%] group-hover:translate-x-0
+                       transition-transform duration-700 opacity-20"
           />
         </motion.button>
       </motion.div>
 
       {/* RIGHT SIDE WATCH ANIMATION */}
-      <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[600px] md:min-h-[800px]">
+      <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[400px] md:min-h-[800px] mt-10 md:mt-0">
         {/* Background Glow */}
-        <div className="absolute w-[550px] h-[550px] bg-zinc-200 rounded-full blur-[140px]" />
+        <div className="absolute w-[250px] md:w-[550px] h-[250px] md:h-[550px] bg-zinc-200 rounded-full blur-[80px] md:blur-[140px]" />
 
         {/* OUTER WATCH RING */}
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute w-[480px] md:w-[760px] opacity-90"
+          className="absolute w-[280px] sm:w-[350px] md:w-[760px] opacity-90"
         >
           <img
             src={watch}
@@ -83,7 +81,7 @@ const Indianew = () => {
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute w-[160px] md:w-[810px] z-10"
+          className="absolute w-[220px] sm:w-[280px] md:w-[810px] z-10"
         >
           <img
             src={watch2}
@@ -97,7 +95,7 @@ const Indianew = () => {
           <img
             src={logo}
             alt="brand logo"
-            className="w-40 md:w-35 object-contain drop-shadow-lg"
+            className="w-20 sm:w-24 md:w-40 object-contain drop-shadow-lg"
           />
         </div>
       </div>

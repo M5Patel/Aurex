@@ -1,32 +1,82 @@
 [
   {
     "id": "a1",
+
     "name": "20MM MESH STRAP",
-    "brand": "SYLVI",
-    "price": 449,
+
+    "price": 649,
+
     "originalPrice": 899,
-    "image": "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600",
-    "emi": 150,
+
+    "image": "https://rukminim2.flixcart.com/image/480/640/xif0q/smart-watch-band-strap/r/z/s/watch-strap-leather-belt-for-maxima-max-pro-brave-smartwatch-original-imagh58jhyngsakc.jpeg?q=90",
+
+   
+
     "category": "straps"
   },
+
   {
     "id": "a2",
-    "name": "20MM SILICONE STRAP",
-    "brand": "SYLVI",
-    "price": 499,
+
+    "name": "20MM LIME STRAP",
+
+    "price": 399,
+
     "originalPrice": 899,
-    "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600",
-    "emi": 166,
+
+    "image": "https://rukminim2.flixcart.com/image/480/640/xif0q/smart-watch-band-strap/b/g/k/watch-strap-silicone-for-fastrack-revoltt-fs1-smartwatch-belt-original-imah3gfbgehuuavc.jpeg?q=90",
+
+
+
     "category": "straps"
   },
+
+    {
+    "id": "a2",
+
+    "name": "20MM BLACK STRAP",
+
+    "price": 499,
+
+    "originalPrice": 899,
+
+    "image": "https://rukminim2.flixcart.com/image/480/640/xif0q/smart-watch-band-strap/6/c/c/watch-strap-silicone-for-noise-hrx-bounce-smartwatch-belt-black-original-imah3gfbhpzyjhkc.jpeg?q=90",
+
+   
+
+    "category": "straps"
+  },
+
+    {
+    "id": "a2",
+
+    "name": "20MM GREEN STRAP",
+
+    "price": 449,
+
+    "originalPrice": 899,
+
+    "image": "https://m.media-amazon.com/images/I/71Zmfh8yOIL.jpg",
+
+ 
+
+    "category": "straps"
+  },
+
+
   {
     "id": "a3",
-    "name": "Premium Leather Box",
-    "brand": "SYLVI",
+
+    "name": "Premium Apple Strap",
+
     "price": 1299,
+
     "originalPrice": 1999,
-    "image": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600",
-    "emi": 433,
+
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/11/364084600/QN/WU/JE/16132940/22mm-white-silicone-strap-with-folding-magnetic-lock-500x500.jpeg",
+
+   
+
     "category": "boxes"
   }
 ]

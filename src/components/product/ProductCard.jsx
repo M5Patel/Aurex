@@ -1,17 +1,18 @@
+import { memo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import { useCartStore } from '../../store/cartStore';
 import { useWishlistStore } from '../../store/wishlistStore';
 import { useToast } from '../layout/ToastProvider';
+import LazyImage from '../ui/LazyImage';
 
-export default function ProductCard({ product }) {
+const ProductCard = memo(function ProductCard({ product }) {
   const addItem = useCartStore((s) => s.addItem);
   const toggleWishlist = useWishlistStore((s) => s.toggle);
   const wishlisted = useWishlistStore((s) => s.items.some((i) => i.id === product.id));
   const toast = useToast();
 
-  const handleWishlist = (e) => {
+  const handleWishlist = useCallback((e) => {
     e.preventDefault();
     toggleWishlist(product);
     if (wishlisted) {
@@ -25,9 +26,9 @@ export default function ProductCard({ product }) {
         description: product.name,
       });
     }
-  };
+  }, [toggleWishlist, product, wishlisted, toast]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = useCallback(() => {
     addItem(product);
     const removeFromWishlist = useWishlistStore.getState().remove;
     if (wishlisted) removeFromWishlist(product.id);
@@ -35,40 +36,33 @@ export default function ProductCard({ product }) {
       title: 'Added to cart',
       description: product.name,
     });
-  };
+  }, [addItem, product, wishlisted, toast]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="group"
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.22, ease: 'easeOut' }}
-    >
+    <div className="group">
       <Link to={`/product/${product.slug}`}>
         <div className="relative aspect-square overflow-hidden bg-gray-50">
-          <motion.img
+          <LazyImage
             src={product.images?.[0] || product.image}
             alt={product.name}
-            className="h-full w-full object-cover"
-            whileHover={{ scale: 1.08 }}
-            transition={{ duration: 0.35, ease: 'easeOut' }}
-            loading="lazy"
+            width={product.width || 800}
+            height={product.height || 800}
+            className="h-full w-full object-cover transition-transform duration-350 ease-out group-hover:scale-[1.08]"
+            containerClassName="h-full w-full"
           />
           {product.isNew && (
-            <span className="absolute right-3 top-3 bg-luxury-black px-2 py-1 text-xs text-white">
+            <span className="absolute right-3 top-3 bg-luxury-black px-2 py-1 text-xs text-white z-10">
               NEW
             </span>
           )}
           <button
             onClick={handleWishlist}
             aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
-            className="absolute left-3 top-3 rounded-full bg-white/90 p-2 opacity-0 shadow-sm transition-all duration-200 hover:bg-white group-hover:opacity-100"
+            className="absolute left-3 top-3 rounded-full bg-white/90 p-2 opacity-0 shadow-sm transition-all duration-200 hover:bg-white group-hover:opacity-100 z-10"
           >
             <Heart
-              className={`h-4 w-4 ${
-                wishlisted ? 'fill-red-500 text-red-500' : 'text-gray-700'
-              }`}
+              className={`h-4 w-4 ${wishlisted ? 'fill-red-500 text-red-500' : 'text-gray-700'
+                }`}
             />
           </button>
         </div>
@@ -93,6 +87,8 @@ export default function ProductCard({ product }) {
       >
         Add to Cart
       </button>
-    </motion.div>
+    </div>
   );
-}
+});
+
+export default ProductCard;

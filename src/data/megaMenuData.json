@@ -5,109 +5,124 @@
       {
         "title": "SHOP BY GENDER",
         "items": [
-          { "name": "Men", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Women", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Men", "img": "https://images-cdn.ubuy.co.in/67e2d6d0c68f0906cc63df9b-poedagar-men-watch-luxury-business.jpg" },
+          { "name": "Women", "img": "https://images-cdn.ubuy.co.in/68e0db89da4209c9b30042fa-poedagar-luxury-women-watch-top-brand.jpg" },
           { "name": "View All" }
         ]
       },
       {
         "title": "SHOP BY PRICE",
         "items": [
-          { "name": "Under Rs 1500", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Under Rs 2000", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Under Rs 3000", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Under Rs 5000", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" }
+          { "name": "Under Rs 1500", "img": "https://www.carlington.in/cdn/shop/files/Carliongton_premium_black_analog_mens_s_watch_6020.jpg?v=1712818158&width=2048" },
+          { "name": "Under Rs 2000", "img": "https://www.fossil.com/on/demandware.static/-/Library-Sites-FossilSharedLibrary/default/dw294e3664/2025/HO25/set_10272025_global_holiday_lp/watches/Watches_LP_carousel_Style_Mens_classic.jpg" },
+          { "name": "Under Rs 3000", "img": "https://www.jiomart.com/images/product/500x630/460897159_black/dw00100415-analogue-wrist-watch-with-chain-strap-model-460897159_black-0-202206042323.jpg" },
+          { "name": "Under Rs 5000", "img": "https://cdn.shopify.com/s/files/1/0699/3156/5284/files/OMEGA_941e4a7b-95f4-4b7f-80f2-c416580bf2a8.jpg?v=1749108021" }
         ]
       },
       {
         "title": "SHOP BY STRAP",
         "items": [
-          { "name": "Leather Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Steel Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Silicone Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Nylon Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Leather Watches", "img": "https://www.carlington.in/cdn/shop/files/Carlington_elite_analog_men_s_watch_ct1050_brownsilver.png?v=1697087570&width=2400" },
+          { "name": "Steel Watches", "img": "https://shop.timexindia.com/cdn/shop/files/TWEG23503_1.jpg?v=1703338501" },
+          { "name": "Silicone Watches", "img": "https://www.jiomart.com/images/product/original/rv7wwtzwjs/crestello-black-silicone-strap-analog-wrist-watch-for-men-black-dial-cr-bk014-blk-product-images-rv7wwtzwjs-0-202306031527.jpg?im=Resize=(500,630)" },
+          { "name": "Nylon Watches", "img": "https://images-cdn.ubuy.co.in/6537e11962516f063f2d2f0c-seiko-men-s-automatic-5-sports-green.jpg" },
           { "name": "View All" }
         ]
       },
       {
         "title": "SHOP BY TYPE",
         "items": [
-          { "name": "Automatic Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Digital Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Analog Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Analog Digital Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Chronograph Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Sports Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" }
+          { "name": "Automatic Watches", "img": "https://m.media-amazon.com/images/I/61LxKqyjLTL._AC_UY1000_.jpg" },
+          { "name": "Digital Watches", "img": "https://zimsonwatches.com/cdn/shop/files/CASIO_Digital_Watch_Youth_F-91W-1Q_Digital_Watch.webp?v=1738740413" },
+          { "name": "Analog Watches", "img": "https://m.media-amazon.com/images/I/71di3hCIgHL._AC_UY1000_.jpg" },
+          { "name": "Analog Digital Watches", "img": "https://sylvi.in/cdn/shop/files/SYLVI-YD-3022-BROWNLEATHER800X1000_1080x.webp?v=1734668736" },
+          { "name": "Chronograph Watches", "img": "https://content.thewosgroup.com/productimage/17351250/17351250_1.jpg?impolicy=hero&imwidth=700" },
+          { "name": "Sports Watches", "img": "https://www.sonatawatches.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dwb5ddff55/images/Sonata/Catalog/7930PP18W_1.jpg?sw=800&sh=800" }
         ]
       },
       {
         "title": "SHOP BY STYLE",
         "items": [
-          { "name": "Daily Wear", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Office Wear", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Sports Wear", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Minimalist", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          { "name": "Daily Wear", "img": "https://tiimg.tistatic.com/fp/1/007/595/genuine-with-matt-black-strap-circle-analog-casual-watch-for-daily-use-425.jpg" },
+          { "name": "Office Wear", "img": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJ_drLq0UUA17l_RrCaGV8PeILokJ7NFfK2YiB-_3tLeMySFgh5LAU4V_Lsg5yZQLp_We41509Y6QnxL1LUHIfGpimgBS5qPf3uioJ7Fm_eM4xzHQLjfTBsfancouA_ZA4tUy_txwAXl-z/w400-h400/Seiko+5+SNK793.jpg" },
+          { "name": "Sports Wear", "img": "https://images-static.nykaa.com/media/catalog/product/8/c/8ceac91KRWGO0070703_1.jpg" },
           { "name": "View All" }
         ]
       }
     ]
   },
+
   "collection": {
     "type": "lists",
     "columns": [
       {
         "title": "PROTOTYPE",
         "items": [
-          { "name": "Stardom", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" }
+          {
+            "name": "Stardom",
+            "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+          }
         ]
       },
       {
         "title": "NEW ARRIVALS",
         "items": [
-          { "name": "Blade Dual Time", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Timeora", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Ellore", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Riva", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Serene", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Dazzle", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
+          {
+            "name": "Blade Dual Time",
+            "img": "https://content.thewosgroup.com/productimage/17351250/17351250_1.jpg"
+          },
+          {
+            "name": "Timeora",
+            "img": "https://sylvi.in/cdn/shop/files/Sylvi_Timeora_Watch_Collection_Image_Homepage_d9be0a41-0f1b-417b-809f-4981f3a86d41.webp"
+          },
+          {
+            "name": "Ellore",
+            "img": "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a"
+          },
           { "name": "View All" }
         ]
       },
       {
         "title": "LATEST COLLECTION",
         "items": [
-          { "name": "Bolt", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Ocean", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Gazedoom", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Velvetine", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Bella", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Urbane Moon", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Elegare", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" }
+          {
+            "name": "Bolt",
+            "img": "https://images.unsplash.com/photo-1524592094714-0f0654e20314"
+          },
+          {
+            "name": "Ocean",
+            "img": "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6"
+          }
         ]
       },
       {
         "title": "CLASSIC COLLECTION",
         "items": [
-          { "name": "Iconic Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Timegrapher Watches", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Majestic", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Hawk", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Opus", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Professional Edge", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Rig One 'O One WT Max", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "View All" }
+          {
+            "name": "Iconic Watches",
+            "img": "https://www.carlington.in/cdn/shop/files/Carliongton_premium_black_analog_mens_s_watch_6020.jpg"
+          },
+          {
+            "name": "Timegrapher Watches",
+            "img": "https://images.unsplash.com/photo-1524805444758-089113d48a6d"
+          },
+          {
+            "name": "Majestic",
+            "img": "https://images.unsplash.com/photo-1594534475808-b18fc33b045e"
+          }
         ]
       },
       {
         "title": "LUXURY COLLECTION",
         "items": [
-          { "name": "Starboard", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Imperial Watch", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Urbanic", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Urbane", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Blade", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "Specter", "img": "https://placehold.co/40x50/f5f5f5/a3a3a3?text=Watch" },
-          { "name": "View All" }
+          {
+            "name": "Starboard",
+            "img": "https://m.media-amazon.com/images/I/71di3hCIgHL._AC_UY1000_.jpg"
+          },
+          {
+            "name": "Imperial Watch",
+            "img": "https://sylvi.in/cdn/shop/files/Sylvi_Imperial_black_Watch_Collection_Homepage_Main_Image.webp"
+          }
         ]
       }
     ]
@@ -116,12 +131,12 @@
     "type": "promos",
     "promos": [
       {
-        "img": "https://placehold.co/600x400/1a1a1a/ffffff?text=Premium+Leather+Box",
+        "img": "https://www.home4u.in/cdn/shop/files/AR12666_CR.jpg?v=1753069666",
         "link": "/accessories/box",
         "alt": "Premium Leather Box"
       },
       {
-        "img": "https://placehold.co/600x400/e5e5e5/1a1a1a?text=Watch+Straps",
+        "img": "https://www.indianleathercraft.com/cdn/shop/products/indianleathercraft-vintage-leather-bands-vintage-leather-watch-strap-36755095552259.png?v=1660842737&width=1946",
         "link": "/accessories/straps",
         "alt": "Watch Straps"
       }

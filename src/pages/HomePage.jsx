@@ -12,6 +12,7 @@ import Sellbrandon from '../components/home/sellbrandon';
 import ExploreAccessories from '../components/home/ExploreAccessories';
 import Shopby from '../components/home/Shopby';
 import Touchslide from '../components/home/Touchslide';
+import LuxuryWatchSlider from '../components/home/LuxuryWatchSlider';
 export default function HomePage() {
   const [products, setProducts] = useState([]);
 
@@ -32,7 +33,8 @@ export default function HomePage() {
        <Indianew />
       <TrustSection />
       <Touchslide/>
-      <Newsletter />
+      <LuxuryWatchSlider />
+       <Newsletter />
     </main>
   );
 }

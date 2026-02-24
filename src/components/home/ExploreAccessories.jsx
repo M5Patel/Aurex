@@ -1,60 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck } from 'lucide-react'; // Using lucide-react for the little EMI icon
+import { ShieldCheck } from 'lucide-react'; 
 
-// Dummy data matching your screenshot perfectly
-const accessoriesData = [
-  {
-    id: "a1",
-    name: "20MM MESH STRAP",
-    brand: "SYLVI",
-    price: 449.00,
-    originalPrice: 899.00,
-    emi: 150,
-    image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&q=80", // Replace with your mesh strap image
-    slug: "20mm-mesh-strap"
-  },
-  {
-    id: "a2",
-    name: "20MM SILICONE STRAP",
-    brand: "SYLVI",
-    price: 499.00,
-    originalPrice: 899.00,
-    emi: 166,
-    image: "https://images.unsplash.com/photo-1508057198894-247b23fe5278?w=800&q=80", // Replace with your silicone strap image
-    slug: "20mm-silicone-strap"
-  },
-  {
-    id: "a3",
-    name: "10MM SILVER MESH STRAP",
-    brand: "SYLVI",
-    price: 499.00,
-    originalPrice: 899.00,
-    emi: 166,
-    image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&q=80", // Replace with your thin mesh strap image
-    slug: "10mm-silver-mesh-strap"
-  },
-  {
-    id: "a4",
-    name: "STRAP TOOL",
-    brand: "SYLVI",
-    price: 499.00,
-    originalPrice: 899.00,
-    emi: 166,
-    image: "https://images.unsplash.com/photo-1586864387789-228fa082c134?w=800&q=80", // Replace with your tool image
-    slug: "strap-tool"
-  },
-  {
-    id: "a5",
-    name: "24MM SKY BLUE NYLON STRAP",
-    brand: "SYLVI",
-    price: 499.00,
-    originalPrice: 799.00,
-    emi: 166,
-    image: "https://images.unsplash.com/photo-1601158935942-52255782d322?w=800&q=80", // Replace with your blue strap image
-    slug: "24mm-sky-blue-nylon-strap"
-  }
-];
+// IMPORT THE JSON DATA HERE
+import accessoriesData from '../../data/accessories.json'; 
 
 export default function ExploreAccessories() {
   return (
@@ -93,7 +42,7 @@ export default function ExploreAccessories() {
                 </p>
                 
                 {/* Name */}
-                <p className="text-[12px] md:text-[13px] font-medium text-gray-900 uppercase tracking-wide mb-1.5 leading-snug">
+                <p className="text-[12px] md:text-[13px] font-medium text-gray-900 uppercase tracking-wide mb-1.5 leading-snug truncate">
                   {item.name}
                 </p>
                 
@@ -108,6 +57,16 @@ export default function ExploreAccessories() {
                     Rs. {item.price.toFixed(2)}
                   </span>
                 </div>
+
+                {/* EMI Display */}
+                {item.emi && (
+                  <div className="flex items-center justify-center gap-1.5 mt-1 text-[#4CAF50]">
+                    <ShieldCheck size={14} strokeWidth={2.5} />
+                    <span className="text-[10px] md:text-[11px] font-semibold tracking-wide uppercase">
+                      EMI from ₹{item.emi}
+                    </span>
+                  </div>
+                )}
               </div>
             </Link>
           ))}

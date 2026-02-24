@@ -1,196 +1,470 @@
 [
   {
-    "id": "1",
-    "name": "Blade Dual Time Black Silver Silicone",
-    "slug": "blade-dual-time-black-silver-silicone",
-    "brand": "SYLVI",
+    "id": 1,
+    "name": "Blade Dual Time Black Silver",
+    "slug": "blade-dual-time-black-silver",
     "price": 1549,
     "originalPrice": 2399,
-    "category": "blade-dual-time",
+    "category": "sports",
     "type": "analog-digital",
-    "gender": "unisex",
-    "strap": "silicone",
-    "style": "sports",
-    "images": [
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800",
-      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800",
-      "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800"
-    ],
-    "isNew": true,
-    "emi": 516,
-    "description": "Analog soul. Digital precision. The Blade Dual Time redefines layered dual-time precision."
-  },
-  {
-    "id": "2",
-    "name": "Blade Dual Time Black Rose Gold Silicone",
-    "slug": "blade-dual-time-black-rosegold-silicone",
-    "brand": "SYLVI",
-    "price": 1649,
-    "originalPrice": 2499,
-    "category": "blade-dual-time",
-    "type": "analog-digital",
-    "gender": "unisex",
-    "strap": "silicone",
-    "style": "minimalist",
-    "images": [
-      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800",
-      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800"
-    ],
-    "isNew": true,
-    "emi": 550
-  },
-  {
-    "id": "3",
-    "name": "Blade Dual Time All Black Silicone",
-    "slug": "blade-dual-time-all-black-silicone",
-    "brand": "SYLVI",
-    "price": 1599,
-    "originalPrice": 2399,
-    "category": "blade-dual-time",
-    "type": "analog-digital",
-    "gender": "unisex",
-    "strap": "silicone",
-    "style": "sports",
-    "images": [
-      "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800",
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800",
-      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800"
-    ],
-    "isNew": true,
-    "emi": 533
-  },
-  {
-    "id": "4",
-    "name": "Blade Dual Time All Black Steel",
-    "slug": "blade-dual-time-all-black-steel",
-    "brand": "SYLVI",
-    "price": 2199,
-    "originalPrice": 2999,
-    "category": "blade-dual-time",
-    "type": "analog-digital",
-    "gender": "unisex",
-    "strap": "steel",
-    "style": "office",
-    "images": [
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800",
-      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800"
-    ],
-    "isNew": true,
-    "emi": 733
-  },
-  {
-    "id": "5",
-    "name": "Specter",
-    "slug": "specter",
-    "brand": "SYLVI",
-    "price": 3499,
-    "originalPrice": 4499,
-    "category": "luxury-collection",
-    "type": "analog",
     "gender": "men",
-    "strap": "steel",
+    "strap": "silicone",
     "style": "sports",
     "images": [
-      "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800",
-      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800",
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800"
+      "https://images-cdn.ubuy.co.in/67e2d6d0c68f0906cc63df9b-poedagar-men-watch-luxury-business.jpg",
+      "https://images.unsplash.com/photo-1524592094714-0f0654e20314"
     ],
-    "isNew": false,
-    "emi": 1166
+    "isNew": true,
+    "width": 800,
+    "height": 800
   },
   {
-    "id": "6",
-    "name": "Velvetine",
-    "slug": "velvetine",
-    "brand": "SYLVI",
-    "price": 2999,
-    "originalPrice": 3999,
-    "category": "latest-collection",
+    "id": 2,
+    "name": "Veloura Rose Classic",
+    "slug": "veloura-rose-classic",
+    "price": 2799,
+    "originalPrice": 3599,
+    "category": "women",
     "type": "analog",
     "gender": "women",
     "strap": "steel",
     "style": "minimalist",
     "images": [
-      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800",
-      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800"
+      "https://images-cdn.ubuy.co.in/68e0db89da4209c9b30042fa-poedagar-luxury-women-watch-top-brand.jpg",
+      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7"
     ],
-    "isNew": false,
-    "emi": 1000
+    "isNew": true,
+    "width": 800,
+    "height": 800
   },
   {
-    "id": "7",
-    "name": "Elegare",
-    "slug": "elegare",
-    "brand": "SYLVI",
-    "price": 3199,
-    "originalPrice": 3999,
-    "category": "latest-collection",
+    "id": 3,
+    "name": "Carlton Premium Black",
+    "slug": "carlton-premium-black",
+    "price": 1999,
+    "originalPrice": 2799,
+    "category": "formal",
     "type": "analog",
-    "gender": "unisex",
-    "strap": "steel",
-    "style": "office",
-    "images": [
-      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800",
-      "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800"
-    ],
-    "isNew": false,
-    "emi": 1066
-  },
-  {
-    "id": "8",
-    "name": "Starboard",
-    "slug": "starboard",
-    "brand": "SYLVI",
-    "price": 4499,
-    "originalPrice": 5499,
-    "category": "luxury-collection",
-    "type": "chronograph",
     "gender": "men",
     "strap": "steel",
     "style": "office",
     "images": [
-      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800",
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800"
+      "https://www.carlington.in/cdn/shop/files/Carliongton_premium_black_analog_mens_s_watch_6020.jpg?v=1712818158&width=2048",
+      "https://images.unsplash.com/photo-1508057198894-247b23fe5ade"
     ],
-    "isNew": false,
-    "emi": 1500
+    "width": 800,
+    "height": 800
   },
   {
-    "id": "9",
-    "name": "Aurex Minimalist Silver",
-    "slug": "aurex-minimalist-silver",
-    "brand": "AUREX",
-    "price": 1899,
-    "originalPrice": 2599,
-    "category": "latest-collection",
+    "id": 4,
+    "name": "Fossil Heritage Steel",
+    "slug": "fossil-heritage-steel",
+    "price": 4299,
+    "originalPrice": 5299,
+    "category": "luxury",
+    "type": "analog",
+    "gender": "men",
+    "strap": "steel",
+    "style": "formal",
+    "images": [
+      "https://www.fossil.com/on/demandware.static/-/Library-Sites-FossilSharedLibrary/default/dw294e3664/2025/HO25/set_10272025_global_holiday_lp/watches/Watches_LP_carousel_Style_Mens_classic.jpg",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 5,
+    "name": "Classic Chain Analog",
+    "slug": "classic-chain-analog",
+    "price": 2499,
+    "originalPrice": 3299,
+    "category": "formal",
     "type": "analog",
     "gender": "unisex",
     "strap": "steel",
-    "style": "minimalist",
+    "style": "office",
     "images": [
-      "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800",
-      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800"
+      "https://www.jiomart.com/images/product/500x630/460897159_black/dw00100415-analogue-wrist-watch-with-chain-strap-model-460897159_black-0-202206042323.jpg",
+      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6"
     ],
-    "isNew": true,
-    "emi": 633
+    "width": 800,
+    "height": 800
   },
   {
-    "id": "10",
-    "name": "Aurex Chrono Stealth",
-    "slug": "aurex-chrono-stealth",
-    "brand": "AUREX",
-    "price": 3299,
-    "originalPrice": 4199,
-    "category": "luxury-collection",
+    "id": 6,
+    "name": "Omega Elite Chrono",
+    "slug": "omega-elite-chrono",
+    "price": 4999,
+    "originalPrice": 5999,
+    "category": "luxury",
+    "type": "chronograph",
+    "gender": "men",
+    "strap": "steel",
+    "style": "luxury",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0699/3156/5284/files/OMEGA_941e4a7b-95f4-4b7f-80f2-c416580bf2a8.jpg?v=1749108021",
+      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 7,
+    "name": "Leather Edge Brown",
+    "slug": "leather-edge-brown",
+    "price": 2799,
+    "originalPrice": 3699,
+    "category": "casual",
+    "type": "analog",
+    "gender": "men",
+    "strap": "leather",
+    "style": "daily",
+    "images": [
+      "https://www.carlington.in/cdn/shop/files/Carlington_elite_analog_men_s_watch_ct1050_brownsilver.png?v=1697087570&width=2400",
+      "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 8,
+    "name": "Timex Steel Classic",
+    "slug": "timex-steel-classic",
+    "price": 3199,
+    "originalPrice": 4099,
+    "category": "formal",
+    "type": "analog",
+    "gender": "men",
+    "strap": "steel",
+    "images": [
+      "https://shop.timexindia.com/cdn/shop/files/TWEG23503_1.jpg?v=1703338501",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 9,
+    "name": "Silicone Sport Black",
+    "slug": "silicone-sport-black",
+    "price": 1599,
+    "originalPrice": 2299,
+    "category": "sports",
+    "type": "analog",
+    "gender": "men",
+    "strap": "silicone",
+    "images": [
+      "https://www.jiomart.com/images/product/original/rv7wwtzwjs/crestello-black-silicone-strap-analog-wrist-watch-for-men-black-dial-cr-bk014-blk-product-images-rv7wwtzwjs-0-202306031527.jpg?im=Resize=(500,630)",
+      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 10,
+    "name": "Seiko Automatic Green",
+    "slug": "seiko-automatic-green",
+    "price": 4599,
+    "originalPrice": 5599,
+    "category": "luxury",
+    "type": "automatic",
+    "gender": "men",
+    "strap": "nylon",
+    "images": [
+      "https://images-cdn.ubuy.co.in/6537e11962516f063f2d2f0c-seiko-men-s-automatic-5-sports-green.jpg",
+      "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 11,
+    "name": "Casio Digital Classic",
+    "slug": "casio-digital-classic",
+    "price": 1299,
+    "originalPrice": 1799,
+    "category": "sports",
+    "type": "digital",
+    "gender": "unisex",
+    "strap": "silicone",
+    "images": [
+      "https://zimsonwatches.com/cdn/shop/files/CASIO_Digital_Watch_Youth_F-91W-1Q_Digital_Watch.webp?v=1738740413",
+      "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 12,
+    "name": "Amazon Steel Elite",
+    "slug": "amazon-steel-elite",
+    "price": 3999,
+    "originalPrice": 4999,
+    "category": "luxury",
+    "type": "analog",
+    "gender": "men",
+    "strap": "steel",
+    "images": [
+      "https://m.media-amazon.com/images/I/61LxKqyjLTL._AC_UY1000_.jpg",
+      "https://m.media-amazon.com/images/I/71di3hCIgHL._AC_UY1000_.jpg"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 13,
+    "name": "Chrono Master Pro",
+    "slug": "chrono-master-pro",
+    "price": 3499,
+    "originalPrice": 4499,
+    "category": "sports",
+    "type": "chronograph",
+    "gender": "men",
+    "strap": "steel",
+    "images": [
+      "https://content.thewosgroup.com/productimage/17351250/17351250_1.jpg",
+      "https://images.unsplash.com/photo-1548171915-eaf9c1e4c4c2"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 14,
+    "name": "Daily Matte Casual",
+    "slug": "daily-matte-casual",
+    "price": 1799,
+    "originalPrice": 2399,
+    "category": "casual",
+    "type": "analog",
+    "gender": "unisex",
+    "strap": "leather",
+    "images": [
+      "https://tiimg.tistatic.com/fp/1/007/595/genuine-with-matt-black-strap-circle-analog-casual-watch-for-daily-use-425.jpg",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 15,
+    "name": "Office Silver Dial",
+    "slug": "office-silver-dial",
+    "price": 2499,
+    "originalPrice": 3299,
+    "category": "formal",
+    "type": "analog",
+    "gender": "men",
+    "strap": "steel",
+    "images": [
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJ_drLq0UUA17l_RrCaGV8PeILokJ7NFfK2YiB-_3tLeMySFgh5LAU4V_Lsg5yZQLp_We41509Y6QnxL1LUHIfGpimgBS5qPf3uioJ7Fm_eM4xzHQLjfTBsfancouA_ZA4tUy_txwAXl-z/w400-h400/Seiko+5+SNK793.jpg",
+      "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 16,
+    "name": "Nykaa Sport Chrono",
+    "slug": "nykaa-sport-chrono",
+    "price": 2199,
+    "originalPrice": 2999,
+    "category": "sports",
     "type": "chronograph",
     "gender": "men",
     "strap": "silicone",
-    "style": "sports",
     "images": [
-      "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800",
-      "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800"
+      "https://images-static.nykaa.com/media/catalog/product/8/c/8ceac91KRWGO0070703_1.jpg",
+      "https://images.unsplash.com/photo-1617625802912-cde586faf331"
     ],
-    "isNew": false,
-    "emi": 1099
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 17,
+    "name": "Sylvi Heritage Black",
+    "slug": "sylvi-heritage-black",
+    "price": 2699,
+    "originalPrice": 3499,
+    "category": "formal",
+    "type": "analog",
+    "gender": "men",
+    "strap": "steel",
+    "images": [
+      "https://sylvi.in/cdn/shop/files/SYLVI-YD-3022-BROWNLEATHER800X1000_1080x.webp?v=1734668736",
+      "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 18,
+    "name": "Luxury Velvet Steel",
+    "slug": "luxury-velvet-steel",
+    "price": 3899,
+    "originalPrice": 4899,
+    "category": "luxury",
+    "type": "analog",
+    "gender": "women",
+    "strap": "steel",
+    "images": [
+      "https://sylvi.in/cdn/shop/files/SY-2408-BK-RG-RG-SL-ST_Velvetine_Steel_800_x_800.webp?v=1755060427",
+      "https://images.unsplash.com/photo-1594534475808-b18fc33b045e"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 19,
+    "name": "Urbanic Green Dial",
+    "slug": "urbanic-green-dial",
+    "price": 2999,
+    "originalPrice": 3799,
+    "category": "casual",
+    "type": "analog",
+    "gender": "men",
+    "strap": "steel",
+    "images": [
+      "https://sylvi.in/cdn/shop/files/Sylvi_Urbanic_Green_Watch_Collection_Image_Homepage.webp?v=1729511480",
+      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 20,
+    "name": "Imperial Black Elite",
+    "slug": "imperial-black-elite",
+    "price": 4399,
+    "originalPrice": 5499,
+    "category": "luxury",
+    "type": "analog",
+    "gender": "men",
+    "strap": "steel",
+    "images": [
+      "https://sylvi.in/cdn/shop/files/Sylvi_Imperial_black_Watch_Collection_Homepage_Main_Image.webp?v=1720243572",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 21,
+    "name": "Moon Classic Edition",
+    "slug": "moon-classic-edition",
+    "price": 3199,
+    "originalPrice": 3999,
+    "category": "formal",
+    "type": "analog",
+    "gender": "unisex",
+    "strap": "steel",
+    "images": [
+      "https://sylvi.in/cdn/shop/files/Sylvi_Watch_Collection_Image_Homepage_800_x_800_29295e68-41b3-4239-9c0f-e398e0892146.webp?v=1770894343",
+      "https://images.unsplash.com/photo-1508057198894-247b23fe5ade"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 22,
+    "name": "Timeora Premium",
+    "slug": "timeora-premium",
+    "price": 2999,
+    "originalPrice": 3799,
+    "category": "formal",
+    "type": "analog",
+    "gender": "men",
+    "strap": "steel",
+    "images": [
+      "https://sylvi.in/cdn/shop/files/Sylvi_Timeora_Watch_Collection_Image_Homepage_d9be0a41-0f1b-417b-809f-4981f3a86d41.webp?v=1756535110",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 23,
+    "name": "Elegant Silver Office",
+    "slug": "elegant-silver-office",
+    "price": 2399,
+    "originalPrice": 3199,
+    "category": "office",
+    "type": "analog",
+    "gender": "unisex",
+    "strap": "steel",
+    "images": [
+      "https://sylvi.in/cdn/shop/files/Sylv_Elegare_Black_silver_Watch_Collection_Image_Homepage.webp?v=1736160692",
+      "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 24,
+    "name": "Minimal Steel Edge",
+    "slug": "minimal-steel-edge",
+    "price": 1999,
+    "originalPrice": 2799,
+    "category": "minimalist",
+    "type": "analog",
+    "gender": "unisex",
+    "strap": "steel",
+    "images": [
+      "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a",
+      "https://images.unsplash.com/photo-1548171915-eaf9c1e4c4c2"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 25,
+    "name": "Chrono Sport Max",
+    "slug": "chrono-sport-max",
+    "price": 3599,
+    "originalPrice": 4599,
+    "category": "sports",
+    "type": "chronograph",
+    "gender": "men",
+    "strap": "silicone",
+    "images": [
+      "https://images.unsplash.com/photo-1617625802912-cde586faf331",
+      "https://images.unsplash.com/photo-1511389026070-a14ae610a1be"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 26,
+    "name": "Chrono Sport Max",
+    "slug": "chrono-sport-max",
+    "price": 2999,
+    "originalPrice": 3999,
+    "category": "sports",
+    "type": "chronograph",
+    "gender": "women",
+    "strap": "silicone",
+    "images": [
+      "https://www.jiomart.com/images/product/original/rv4ubkyz8n/iloz-luxury-new-rose-gold-elegant-look-women-fashion-analog-quartz-wrist-watches-female-watch-for-girls-product-images-rv4ubkyz8n-0-202403081901.png?im=Resize=(500,630)",
+      "https://cdn3.ethoswatches.com/the-watch-guide/wp-content/uploads/2019/11/20-great-ladies-watches-buy-2019-iconic-luxury-watch-Bulgari-Serpenti-Omega-Constellation-Rolex-Datejust-top-womens-watches-prices-SP-1.jpg"
+    ],
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": 27,
+    "name": "Chrono Sport Max",
+    "slug": "chrono-sport-max",
+    "price": 4599,
+    "originalPrice": 6999,
+    "category": "sports",
+    "type": "chronograph",
+    "gender": "men",
+    "strap": "leather",
+    "images": [
+      "https://huntwatches.com/wp-content/uploads/2024/07/kf-Sf0f9d3668afc4cd2aa4b253d84c1422f6-2024-Men-Watches-Waterproof-Luminous-Top-Brand-Luxury-Leather-Casual-Sports-Quartz-Wristwatch-Military-Man-Watch-600x600.webp",
+      "https://s.alicdn.com/@sc04/kf/H485c95fd15824ea0b0217f23b9d6988e0.jpg"
+    ],
+    "width": 800,
+    "height": 800
   }
 ]
